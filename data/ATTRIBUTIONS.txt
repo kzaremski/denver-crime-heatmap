@@ -1,0 +1,41 @@
+CRIME DATASET (crime_XX.csv, etc.):
+    This data was obtained from the City of Denver through their Open Data Catalog.
+
+    https://opendata-geospatialdenver.hub.arcgis.com/datasets/1e080d3ce2ae4e2698745a0d02345d4a_324/explore
+
+    Date downloaded/extracted: October 29, 2024.
+
+    Summary:
+        This dataset includes criminal offenses in the City and County of Denver 
+        for the previous five calendar years plus the current year to date. The 
+        data is based on the National Incident Based Reporting System (NIBRS) 
+        which includes all victims of person crimes and all crimes within an 
+        incident. The data is dynamic, which allows for additions, deletions 
+        and/or modifications at any time, resulting in more accurate information 
+        in the database. Due to continuous data entry, the number of records in 
+        subsequent extractions are subject to change. Crime data is updated 
+        Monday through Friday.
+
+    License:
+        USE CONSTRAINTS — The City and County of Denver is not responsible and 
+        shall not be liable to any user or recipient for damages of any kind 
+        arising out of the use of data or information provided by the City and 
+        County of Denver, including the installation of the data or information,
+        its use, or the results obtained from its use. ANY DATA OR INFORMATION 
+        PROVIDED BY THE City and County of Denver IS PROVIDED AS IS WITHOUT 
+        WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, AND THE RECIPIENT 
+        HEREBY WAIVES ANY AND ALL SUCH WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+        ANY WARANTY AS TO THE ACCURACY OR COMPLETENESS OF THE INFORMATION AND THE 
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+        Data or information provided by the City and County of Denver shall be 
+        used and relied upon only at the user's sole risk, and the user agrees to 
+        indemnify and hold harmless the City and County of Denver, its officials, 
+        officers and employees from any liability arising out of the use, 
+        reproduction or dissemination of the data/information provided. NOT FOR 
+        ENGINEERING PURPOSES.
+
+    I had to do some research... "NOT FOR ENGINEERING PURPOSES." refers to civil or 
+    structural engineering and similar uses. We are allowed to use it 
+    in this context.
+
+
