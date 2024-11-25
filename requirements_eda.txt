@@ -1,6 +1,7 @@
 pandas
 ipykernel
-pyrosm=0.6.2
+pyrosm==0.6.2
+tqdm
+scikit-learn
 --index-url https://download.pytorch.org/whl/nightly/cpu
 torch
-tqdm
