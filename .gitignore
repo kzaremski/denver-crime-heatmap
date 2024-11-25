@@ -191,3 +191,15 @@ cython_debug/
 
 # Data
 data/crime.csv
+
+# Databases
+map_cells.db
+blocks.db
+map_grid.db
+map.db
+
+# CSV Files
+map.csv
+
+# Open Street Map Data Files
+*.osm
