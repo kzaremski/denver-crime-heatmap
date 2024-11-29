@@ -2,10 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="/static/3rd-party/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
     <title>Denver Crime Heatmap</title>
 </head>
 <body>
-    
+    <main>
+        <div id="map"></div>
+        <div id="menu">
+            <div id="handle-container">
+                <span class="menu-handle"></span>
+            </div>
+            <h1>Denver Crime Heatmap</h1>
+            <div id="options">
+
+            </div>
+            <p>Copyright &copy; Konstantin Zaremski 2024</p>
+        </div>
+    </main>
+    <!-- Leaflet -->
+    <script src="/static/3rd-party/leaflet/leaflet.js"></script>
+    <script src="/static/3rd-party/leaflet-heat/leaflet-heat.js"></script>
+    <!-- Denver Crime Heatmap -->
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
