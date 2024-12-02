@@ -175,6 +175,7 @@ main {
 
     box-shadow: 0px 0px 10px black, 0px 0px 15px black, 0px 0px 20px black, 0px 0px 25px black, 0px 0px 30px black;
     transition: 0.35s ease-in-out;
+    display: block;
 }
 
 #menu.expanded {
@@ -236,6 +237,19 @@ span.menu-handle::after {
 
 #menu h1 {
     width: 100%;
+    margin: 0;
     display: block;
 }
 
+#menu.never-opened {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

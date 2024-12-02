@@ -1,0 +1,15 @@
+{
+  "name": "denver-crime-heatmap",
+  "version": "1.0.0",
+  "description": "CS 3120 Machine Learning Project - Crime prediction heatmap web app (and data analysis) for Denver, CO.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.81.0"
+  }
+}
