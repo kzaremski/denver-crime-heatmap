@@ -11,9 +11,9 @@ from datetime import datetime, timedelta
 from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostingRegressor
 import pickle
 
-from app.map import MapGrid, UPPER_LEFT_CORNER, LOWER_RIGHT_CORNER
-from app.models import CrimePrediction
-from app.database import get_session
+from .map import MapGrid, UPPER_LEFT_CORNER, LOWER_RIGHT_CORNER
+from .models import CrimePrediction
+from .database import get_session
 
 def get_denver_time(time_delta):
     # Get time values

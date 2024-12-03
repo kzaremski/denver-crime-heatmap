@@ -8,10 +8,10 @@ November 28, 2024
 from flask import Flask, render_template, jsonify, request
 import threading
 from time import sleep
-from app.models import CrimePrediction, Base, engine
-from app.engine import generate_predictions, get_denver_time
-from app.database import get_session
-from app.map import block_to_lat_lon
+from .models import CrimePrediction, Base, engine
+from .engine import generate_predictions, get_denver_time
+from .database import get_session
+from .map import block_to_lat_lon
 import pickle
 from sklearn.preprocessing import LabelEncoder
 
@@ -103,13 +103,4 @@ def start_background_thread():
     thread = threading.Thread(target=prediction_generation_background_task, daemon=True)
     thread.start()
 
-# Check if running in a debugger or not
-if __name__ == '__main__':
-    # Start background task only when running without Flask's debugger
-    start_background_thread()
-    app.run(debug=True)
-else:
-    # When running under Flask's debugger, manually start the background thread
-    if app.debug:
-        start_background_thread()
-        print("Running in debug mode, background task started.")
+start_background_thread()

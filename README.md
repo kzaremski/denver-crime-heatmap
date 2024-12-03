@@ -22,7 +22,7 @@ This project provides a web-based crime prediction heatmap powered by machine le
 To run this project locally, you will need:
 
 - Python 3.8+ installed on your system
-- `pip` for managing Python packages
+- `pip` or `pip3` for managing Python packages
 
 Ensure that you have the required dependencies listed in the `requirements_webapp.txt` file before proceeding with setup.
 
@@ -71,7 +71,7 @@ source .venv/bin/activate
 Install the necessary packages from the `requirements_webapp.txt` file:
 
 ```bash
-pip install -r requirements_webapp.txt
+pip3 install -r requirements_webapp.txt
 ```
 
 This will install Flask, machine learning libraries, and other dependencies required for the web application and data analysis.
@@ -84,7 +84,7 @@ After setting up the environment and installing dependencies, follow these steps
 2. Start the Flask development server with the following command:
 
 ```bash
-python app/app.py
+python3 wsgi.py
 ```
 
 You should see the following output indicating the server is running:

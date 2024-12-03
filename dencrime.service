@@ -1,0 +1,13 @@
+[Unit]
+Description=Denver Crime Heatmap Flask Application
+After=network.target
+
+[Service]
+User=miscprojects  
+Group=www-data       
+WorkingDirectory=/home/miscprojects/denver-crime-heatmap
+Environment="PATH=/home/miscprojects/denver-crime-heatmap/.venv/bin/" 
+ExecStart=/home/miscprojects/denver-crime-heatmap/.venv/bin/gunicorn --workers 3 --bind 127.0.0.1:31200 -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
