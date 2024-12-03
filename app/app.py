@@ -15,6 +15,8 @@ from app.map import block_to_lat_lon
 import pickle
 from sklearn.preprocessing import LabelEncoder
 
+FUTURE_HOURS_PREDICTION_BOUND = 170
+
 app = Flask(__name__)
 
 # Create all tables
@@ -91,7 +93,7 @@ def serve_predictions():
 def prediction_generation_background_task():
     print("Started Prediction Daemon")
     while True:
-        for time_delta in range(-24, 200):
+        for time_delta in range(-24, FUTURE_HOURS_PREDICTION_BOUND):
             generate_predictions(time_delta)
         print('Caught up on predictions!')
         sleep(3600 * 10)

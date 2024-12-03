@@ -144,6 +144,7 @@ window.predictions = []
 
 function updateHeatmap() {
     heatmap = [];
+    window.heat.setLatLngs(heatmap);
     
     if (window.heatmapVariant == 'Likelihood') {
         const crimeCounts = window.predictions.map(point => point.crime_count);
@@ -188,9 +189,18 @@ function updateHeatmap() {
     }
     
     window.heat.setLatLngs(heatmap);
+
+    Toastify({
+        text: "Finished Updating",
+        position: "center",
+        duration: 2500,
+        style: {
+            background: "green",
+        },
+    }).showToast();
 }
 
-window.heatmapVariant = "Likelihood";
+window.heatmapVariant = "Combined";
 
 document.getElementById("display_combined").addEventListener("change", function() {
     if (this.checked) {

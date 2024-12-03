@@ -336,3 +336,4 @@ map.csv
 *.osm
 
 app.db
+artifacts/15m_crime_type_model.pkl
