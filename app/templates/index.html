@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="/static/3rd-party/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="/static/3rd-party/toastify/toastify.min.css"/>
     <link rel="stylesheet" href="/static/css/style.css"/>
     <title>Denver Crime Heatmap</title>
 </head>
@@ -16,13 +17,54 @@
             </div>
             <h1>Denver Crime Heatmap</h1>
             <div id="options">
-
+                <div>
+                    <hr>
+                    <label class="form-label">Heatmap Variant</label><br>
+                    <div class="btn-group" role="group" aria-label="Display Type">
+                        <input type="radio" class="btn-check" name="btnradio" id="display_combined" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="display_combined">Combined</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="display_likelihood" autocomplete="off" checked="true">
+                        <label class="btn btn-outline-danger" for="display_likelihood">Likelihood</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="display_type" autocomplete="off">
+                        <label class="btn btn-outline-warning" for="display_type">Type</label>
+                    </div>
+                    <small class="d-block">
+                        Choose a heatmap variant to display: 
+                        <strong>Combined</strong> shows a blend of crime likelihood and types, 
+                        <strong>Crime Likelihood</strong> highlights areas with higher predicted crime rates, 
+                        and <strong>Crime Type</strong> focuses on the distribution of different crime categories.
+                    </small>
+                </div>
+                <div>
+                    <hr>
+                    <label class="form-label">Time Delta</label>
+                    <input type="range" class="form-range" id="time_delta" min="-24" max="168" step="1" value="0" list="steplist">
+                    <input type="text" class="form-control" id="time_delta_label" disabled value="???">
+                    <small class="d-block">
+                        Move the slider to view past, present, and future predictions up to 7 days into the future.
+                    </small>
+                </div>
+                <div>
+                    <hr>
+                    <button class="btn btn-success" id="center-on-user-location-button">Center Map on My Location</button>
+                    <small class="d-block">
+                        Click the button to automatically center the map on your current location. This helps you quickly view crime data for the area around you.
+                    </small>
+                </div>
+                <div>
+                    <hr>
+                    <button class="btn btn-success" id="center-on-denver-button">Center Map on Downtown Denver</button>
+                    <small class="d-block">
+                        Click the button to center the map on downtown Denver.
+                    </small>
+                </div>
             </div>
-            <p>Copyright &copy; 2024 Konstantin Zaremski - All rights reserved.</p>
+            <p class="mt-4">Copyright &copy; 2024 Konstantin Zaremski - All rights reserved.</p>
         </div>
     </main>
     <!-- Leaflet -->
     <script src="/static/3rd-party/leaflet/leaflet.js"></script>
+    <script src="/static/3rd-party/toastify/toastify.js"></script>
     <script src="/static/3rd-party/leaflet-heat/leaflet-heat.js"></script>
     <!-- Denver Crime Heatmap -->
     <script src="/static/js/main.js"></script>

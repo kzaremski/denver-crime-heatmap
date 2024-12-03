@@ -334,3 +334,5 @@ map.csv
 
 # Open Street Map Data Files
 *.osm
+
+app.db
