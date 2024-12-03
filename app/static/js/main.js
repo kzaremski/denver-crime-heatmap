@@ -147,43 +147,39 @@ function updateHeatmap() {
     window.heat.setLatLngs(heatmap);
     
     if (window.heatmapVariant == 'Likelihood') {
-        const crimeCounts = window.predictions.map(point => point.crime_count);
-        const minCrimeCount = Math.min(...crimeCounts);
-        const maxCrimeCount = Math.max(...crimeCounts);
-        
+        const crimeCounts = window.predictions.map(point => Number(point.crime_count) || 0);
+        const minCrimeCount = crimeCounts.reduce((min, count) => Math.min(min, count), Infinity);
+        const maxCrimeCount = crimeCounts.reduce((max, count) => Math.max(max, count), -Infinity);
+    
         for (const point of window.predictions) {
             const normalizedCrimeCount = (point.crime_count - minCrimeCount) / (maxCrimeCount - minCrimeCount);
-            
             const intensity = normalizedCrimeCount ** 2;
-            
             heatmap.push([point.lon, point.lat, intensity]);
         }
     } else if (window.heatmapVariant == 'Type') {
-        const crimeTypes = window.predictions.map(point => point.crime_type);
-        const minCrimeType = Math.min(...crimeTypes);
-        const maxCrimeType = Math.max(...crimeTypes);
-        
+        const crimeTypes = window.predictions.map(point => Number(point.crime_type) || 0);
+        const minCrimeType = crimeTypes.reduce((min, type) => Math.min(min, type), Infinity);
+        const maxCrimeType = crimeTypes.reduce((max, type) => Math.max(max, type), -Infinity);
+    
         for (const point of window.predictions) {
             const normalizedCrimeType = (point.crime_type - minCrimeType) / (maxCrimeType - minCrimeType);
-            
             const intensity = normalizedCrimeType ** 2;
-            
             heatmap.push([point.lon, point.lat, intensity]);
         }
     } else {
-        const crimeTypes = window.predictions.map(point => point.crime_type);
-        const minCrimeType = Math.min(...crimeTypes);
-        const maxCrimeType = Math.max(...crimeTypes);
-        const crimeCounts = window.predictions.map(point => point.crime_count);
-        const minCrimeCount = Math.min(...crimeCounts);
-        const maxCrimeCount = Math.max(...crimeCounts);
-        
+        const crimeTypes = window.predictions.map(point => Number(point.crime_type) || 0);
+        const minCrimeType = crimeTypes.reduce((min, type) => Math.min(min, type), Infinity);
+        const maxCrimeType = crimeTypes.reduce((max, type) => Math.max(max, type), -Infinity);
+    
+        const crimeCounts = window.predictions.map(point => Number(point.crime_count) || 0);
+        const minCrimeCount = crimeCounts.reduce((min, count) => Math.min(min, count), Infinity);
+        const maxCrimeCount = crimeCounts.reduce((max, count) => Math.max(max, count), -Infinity);
+    
         for (const point of window.predictions) {
             const normalizedCrimeType = (point.crime_type - minCrimeType) / (maxCrimeType - minCrimeType);
             const normalizedCrimeCount = (point.crime_count - minCrimeCount) / (maxCrimeCount - minCrimeCount);
-            
-            const intensity = (normalizedCrimeCount**2 + ((normalizedCrimeType ** 2) / 2));
-            
+    
+            const intensity = (normalizedCrimeCount ** 2 + ((normalizedCrimeType ** 2) / 2));
             heatmap.push([point.lon, point.lat, intensity]);
         }
     }
